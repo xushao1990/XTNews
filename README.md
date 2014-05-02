@@ -9,8 +9,8 @@ XTNews
 
 2、列表间视图切换与左右menu的切换手势并存
 
-![image](https://github.com/xushao1990/XTNews/master/Screenshots/first.gif)
-![image](https://github.com/JackTeam/XHNewsFrameworkExample/raw/master/Screenshots/XHNewsFrameworkPulDownUpRefresh.gif)
+![image](https://github.com/xushao1990/XTNews/blob/master/Screenshots/first.gif)
+![image](https://github.com/xushao1990/XTNews/blob/master/Screenshots/second.gif)
 
 开发本工程为工作中处理过类似的交互，出于某些原因整理了一份此类交互的实现方式，本工程使用了大量第三方类库，慎入！
 
@@ -28,7 +28,7 @@ XTNews
   
 3、SDWebImage -> https://github.com/rs/SDWebImage
 
-  有名的图片加载类库，幸好网易新闻的图片数据比较标准，不用专门写图片下载。
+  有名的图片加载类库，幸好X易新闻的图片数据比较标准，不用专门写图片下载。
   
 4、CRNavigationController -> https://github.com/croberts22/CRNavigationController
 
