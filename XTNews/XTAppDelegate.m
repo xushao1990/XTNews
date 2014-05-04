@@ -13,6 +13,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self createFilepath];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     XTRootViewController *rootViewController = [XTRootViewController rootViewController];
@@ -26,6 +27,12 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : navigationTextColor}];
     
     return YES;
+}
+
+- (void)createFilepath
+{
+    DLog(@"%@",kURLFilePath);
+    [FileUtil createFolder:kURLFilePath];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

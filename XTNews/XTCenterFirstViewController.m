@@ -23,6 +23,8 @@
 
 @property (nonatomic , strong) iCarousel *carousel;
 
+@property (nonatomic , strong) NSArray *titleArray;
+
 @end
 
 @implementation XTCenterFirstViewController
@@ -31,7 +33,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.navigationItem.title = @"XT新闻";
+        self.navigationItem.title = @"XT图片";
     }
     return self;
 }
@@ -39,6 +41,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _titleArray = @[@"摄影",@"爱心早餐",@"壁纸",@"动漫",@"海贼王",@"搞笑",@"小清新",@"英式田园风格装修"];
     
     _carousel = [[iCarousel alloc] initWithFrame:CGRectMake(0, 98, 320, CGRectGetHeight(self.view.bounds) - 98)];
     _carousel.backgroundColor = [UIColor whiteColor];
@@ -50,13 +54,10 @@
     _carousel.edgeRecognition = YES;
     _carousel.bounceDistance = 0.4;
     [self.view addSubview:_carousel];
-    
-    
-    NSArray *title = @[@"头条",@"推荐",@"娱乐",@"体育",@"财经",@"军事",@"科技",@"时尚"];
-    
+        
     __weak typeof(_carousel) weakCarousel = _carousel;
     
-    _segmentControl = [[XTSegmentControl alloc] initWithFrame:CGRectMake(20, kIOS7DIS(64), 260, 36) Items:title selectedBlock:^(NSInteger index) {
+    _segmentControl = [[XTSegmentControl alloc] initWithFrame:CGRectMake(20, kIOS7DIS(64), 260, 36) Items:_titleArray selectedBlock:^(NSInteger index) {
         
         [weakCarousel scrollToItemAtIndex:index animated:NO];
     }];
@@ -66,7 +67,7 @@
 
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
-    return 8;
+    return _titleArray.count;
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
@@ -76,14 +77,16 @@
     if (view == nil)
     {
         view = [[UIView alloc] initWithFrame:carousel.bounds];
-        listView = [[XTListView alloc] initWithFrame:view.bounds type:XTListViewTypeTableViewCell];
+        listView = [[XTListView alloc] initWithFrame:view.bounds type:XTListViewTypeCollectionCell];
         listView.tag = 1;
         [view addSubview:listView];
-    }
-    else
-    {
+        
+    }else{
+        
         listView = (XTListView *)[view viewWithTag:1];
     }
+    
+    [listView loadCollectionViewWithKeyWord:_titleArray[index]];
     
     return view;
 }

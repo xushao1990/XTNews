@@ -13,5 +13,9 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import "FileUtil.h"
     #import "XTMacroHeader.h"
+    #import "NSString+Extension.h"
+    #import "XTNewsConfig.h"
 #endif
+

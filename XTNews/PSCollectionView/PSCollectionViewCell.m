@@ -44,7 +44,6 @@
     self.collectionView = collectionView;
     self.object = object;
     self.index = index;
-//    [self layoutSubviews];
 }
 
 + (CGFloat)rowHeightForObject:(id)object inColumnWidth:(CGFloat)columnWidth {

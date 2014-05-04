@@ -27,4 +27,8 @@ typedef enum {
 
 - (id)initWithFrame:(CGRect)frame type:(XTListViewType)type;
 
+- (instancetype)initWithFrame:(CGRect)frame keyWord:(NSString *)aKey;
+
+- (void)loadCollectionViewWithKeyWord:(NSString *)aKey;
+
 @end

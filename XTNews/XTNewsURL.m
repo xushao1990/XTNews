@@ -39,7 +39,7 @@
 
 + (NSString *)pageIdentifyWithPageNumber:(NSInteger)aPageNumber
 {
-    return [NSString stringWithFormat:@"%ld-20",aPageNumber * 20];
+    return [NSString stringWithFormat:@"%ld-20",(long)aPageNumber * 20];
 }
 
 @end
