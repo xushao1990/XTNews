@@ -38,13 +38,17 @@
     return self;
 }
 
+#define kSegMentControlHeight (36)
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     _titleArray = @[@"摄影",@"爱心早餐",@"壁纸",@"动漫",@"海贼王",@"搞笑",@"小清新",@"英式田园风格装修"];
     
-    _carousel = [[iCarousel alloc] initWithFrame:CGRectMake(0, 98, 320, CGRectGetHeight(self.view.bounds) - 98)];
+    float listOrigionY = kIOS7DIS(64) + kSegMentControlHeight;
+    float listViewHeight = CGRectGetHeight(self.view.bounds) - 44 - kIOS7DIS(20) - kSegMentControlHeight;
+    _carousel = [[iCarousel alloc] initWithFrame:CGRectMake(0, listOrigionY, 320, listViewHeight)];
     _carousel.backgroundColor = [UIColor whiteColor];
     _carousel.dataSource = self;
     _carousel.delegate = self;

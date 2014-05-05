@@ -49,15 +49,33 @@
 
 + (UINavigationController *)nav:(UIViewController *)sender
 {
-    //用来调节navgationBar颜色的
+    //此处根据实际情况处理，一般用navigationController足矣
     
-    //reference：http://www.cocoachina.com/applenews/devnews/2013/1024/7233.html
-    
-    CRNavigationController *nav = [[CRNavigationController alloc] initWithRootViewController:sender];
-    CRNavigationBar *navigationBar = (CRNavigationBar *)nav.navigationBar;
-    [navigationBar displayColorLayer:YES];
-    navigationBar.barTintColor = [UIColor colorWithRed:0.776471 green:0.196078 blue:0.207843 alpha:1.0];
-    return nav;
+    if (kIS_IOS7) {
+        
+        //iOS7下用来调节navgationBar颜色的
+        
+        //reference：http://www.cocoachina.com/applenews/devnews/2013/1024/7233.html
+        
+        CRNavigationController *nav = [[CRNavigationController alloc] initWithRootViewController:sender];
+        
+        CRNavigationBar *navigationBar = (CRNavigationBar *)nav.navigationBar;
+        
+        [navigationBar displayColorLayer:YES];
+        
+        navigationBar.barTintColor = [UIColor colorWithRed:0.776471 green:0.196078 blue:0.207843 alpha:1.0];
+        
+        return nav;
+        
+    }else{
+        
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:sender];
+        
+        [nav.navigationBar setTintColor:[UIColor colorWithRed:0.776471 green:0.196078 blue:0.207843 alpha:1.0]];
+        
+        return nav;
+    }
+
 }
 
 @end

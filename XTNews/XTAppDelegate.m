@@ -19,14 +19,17 @@
     XTRootViewController *rootViewController = [XTRootViewController rootViewController];
     self.window.rootViewController = rootViewController;
     [self.window makeKeyAndVisible];
-    
+    [self UIConfig];
+    return YES;
+}
+
+- (void)UIConfig
+{
     UIColor *navigationTextColor = [UIColor whiteColor];
     
-    self.window.tintColor = navigationTextColor;
+    if(kIS_IOS7) self.window.tintColor = navigationTextColor;
     
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : navigationTextColor}];
-    
-    return YES;
 }
 
 - (void)createFilepath

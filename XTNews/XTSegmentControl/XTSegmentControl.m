@@ -152,7 +152,7 @@
     NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:XTSegmentControlItemFont]};
     for (int i = 0; i < titleArray.count; i++) {
         NSString *title = titleArray[i];
-        CGSize size = [title sizeWithAttributes:attributes];
+        CGSize size = kIS_IOS7 ? [title sizeWithAttributes:attributes] : [title sizeWithFont:[UIFont systemFontOfSize:XTSegmentControlItemFont]];
         float x = i > 0 ? CGRectGetMaxX([_itemFrames[i-1] CGRectValue]) : 0;
         float y = 0;
         float width = 2 * XTSegmentControlHspace + size.width;

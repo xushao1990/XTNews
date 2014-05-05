@@ -26,8 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    // Do any additional setup after loading the view.
+    if (kIS_IOS7) self.automaticallyAdjustsScrollViewInsets = NO;
+       // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
