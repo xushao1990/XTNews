@@ -25,10 +25,20 @@ typedef enum {
 
 @interface XTListView : UIView
 
+@property (nonatomic) XTListViewType type;
+
+@property (nonatomic) int currentPageNumber;
+
 - (id)initWithFrame:(CGRect)frame type:(XTListViewType)type;
 
 - (instancetype)initWithFrame:(CGRect)frame keyWord:(NSString *)aKey;
 
+//下载图片数据
+
 - (void)loadCollectionViewWithKeyWord:(NSString *)aKey;
+
+//下载网易新闻的数据
+
+- (void)downloadNewsData;
 
 @end

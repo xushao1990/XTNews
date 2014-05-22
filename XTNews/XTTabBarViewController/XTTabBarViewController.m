@@ -37,7 +37,7 @@
 
 - (void)selecteViewControllerWithIndex:(NSInteger)index
 {
-    if (index < self.subViewControllers.count) {
+    if (index < self.subViewControllers.count && index != self.selectedIndex) {
         UIViewController *object = [self.subViewControllers objectAtIndex:index];
         [self transitionFromViewController:self.selectedViewController toViewController:object duration:0 options:UIViewAnimationOptionTransitionNone animations:nil completion:^(BOOL finished) {
             self.selectedViewController = object;

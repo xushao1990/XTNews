@@ -7,9 +7,15 @@
 //
 
 #import "XTLeftMenuViewController.h"
+#import "UIViewController+RESideMenu.h"
+#import "RESideMenu.h"
+#import "XTCenterViewController.h"
 
-@interface XTLeftMenuViewController ()
-
+@interface XTLeftMenuViewController ()<UITableViewDataSource,UITableViewDelegate>
+{
+    UITableView *_tableView;
+    NSArray *_dataSource;
+}
 @end
 
 @implementation XTLeftMenuViewController
@@ -26,9 +32,42 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
+    
+    _dataSource = @[@"第一个viewController",@"第二个viewController"];
+    
+    _tableView = ({
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kIOS7DIS(64), 320, CGRectGetHeight(self.view.frame) - kIOS7DIS(64)) style:UITableViewStylePlain];
+        tableView.delegate = self;
+        tableView.dataSource = self;
+        tableView;
+    });
+    [self.view addSubview:_tableView];
+}
 
-    // Do any additional setup after loading the view.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _dataSource.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIden = @"CC";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIden];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIden];
+    }
+    cell.textLabel.text = _dataSource[indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //关闭leftmene
+    [self.sideMenuViewController hideMenuViewController];
+    
+    //取到centerViewController并跳转到响应的viewController
+    XTCenterViewController *center = (XTCenterViewController *)self.sideMenuViewController.contentViewController;
+    [center selecteViewControllerWithIndex:indexPath.row];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,15 +76,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

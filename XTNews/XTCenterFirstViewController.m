@@ -67,7 +67,27 @@
     }];
     
     [self.view addSubview:_segmentControl];
+    
+    /*
+    UIPanGestureRecognizer *panGes = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(doPanGes:)];
+    [self.view addGestureRecognizer:panGes];
+    */
 }
+/*
+- (void)doPanGes:(UIPanGestureRecognizer *)sender
+{
+    switch (sender.state) {
+        case UIGestureRecognizerStateBegan:
+            DLog();
+            break;
+        case UIGestureRecognizerStateEnded:
+            DLog();
+            break;
+        default:
+            break;
+    }
+}
+ */
 
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
@@ -76,12 +96,18 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
 {
+#warning 此处可以定制想要展示的列表
+    
+#warning 当type为XTListViewTypeCollectionCell时为抓取百度图片的数据，瀑布流展示
+
+#warning 当type为XTListViewTypeTableViewCell时为抓取网易新闻的数据
+    
     XTListView *listView = nil;
     
     if (view == nil)
     {
         view = [[UIView alloc] initWithFrame:carousel.bounds];
-        listView = [[XTListView alloc] initWithFrame:view.bounds type:XTListViewTypeCollectionCell];
+        listView = [[XTListView alloc] initWithFrame:view.bounds type:XTListViewTypeTableViewCell];//修改此处的类型
         listView.tag = 1;
         [view addSubview:listView];
         
@@ -90,7 +116,16 @@
         listView = (XTListView *)[view viewWithTag:1];
     }
     
-    [listView loadCollectionViewWithKeyWord:_titleArray[index]];
+    listView.currentPageNumber = 0;
+    
+    if (listView.type == XTListViewTypeCollectionCell) {
+        
+        [listView loadCollectionViewWithKeyWord:_titleArray[index]];
+        
+    }else if (listView.type == XTListViewTypeTableViewCell) {
+        
+        [listView downloadNewsData];
+    }
     
     return view;
 }

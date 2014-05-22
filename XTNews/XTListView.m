@@ -44,8 +44,6 @@ PSCollectionViewDelegate,
 UIScrollViewDelegate
 >
 
-@property (nonatomic) XTListViewType type;
-
 @property (nonatomic , strong) UITableView *contentTableView;
 
 @property (nonatomic , strong) PSCollectionView *contentCollectionView;
@@ -55,8 +53,6 @@ UIScrollViewDelegate
 //----------------------------------------Sep
 
 @property (nonatomic) NSString *key;
-
-@property (nonatomic) int currentPageNumber;
 
 //-----------------------------------------
 
@@ -117,9 +113,6 @@ UIScrollViewDelegate
                 [self addSubview:tableView];
                 tableView;
             });
-            
-            [self downloadNewsData];//开始下载新闻数据
-            
             break;
         }
         case XTListViewTypeCollectionCell:
@@ -132,11 +125,10 @@ UIScrollViewDelegate
                 collectionView.collectionViewDataSource = self;
                 collectionView.collectionViewDelegate = self;
                 collectionView.delegate = self;
-                [self addFooterView:collectionView];
+                collectionView.backgroundColor = [UIColor whiteColor];
                 [self addSubview:collectionView];
                 collectionView;
             });
-            
             break;
         }
         default:
@@ -144,7 +136,7 @@ UIScrollViewDelegate
     }
 }
 
-- (void)addFooterView:(PSCollectionView *)collectionView
+- (void)addFooterView
 {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
     
@@ -155,13 +147,28 @@ UIScrollViewDelegate
     [button addTarget:self action:@selector(loadMore) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:button];
     
-    [collectionView setFooterView:view];
+    if (_type == XTListViewTypeCollectionCell) {
+        
+        [_contentCollectionView setFooterView:view];
+        
+    }else if (_type == XTListViewTypeTableViewCell) {
+        
+        [_contentTableView setTableFooterView:view];
+    }
 }
 
 - (void)loadMore
 {
     _currentPageNumber++;
-    [self downloadBDPicWithPageNumber:_currentPageNumber keyWord:_key];
+    
+    if (_type == XTListViewTypeCollectionCell) {
+        
+        [self downloadBDPicWithPageNumber:_currentPageNumber keyWord:_key];
+        
+    }else if (_type == XTListViewTypeTableViewCell) {
+        
+        [self downloadNewsData];
+    }
 }
 
 - (void)loadCollectionViewWithKeyWord:(NSString *)aKey
@@ -186,7 +193,7 @@ UIScrollViewDelegate
 {
     __weak typeof(self) weakSelf = self;
     
-    [XTModelHandle shareNewsWithURL:[XTNewsURL shareNewsURLWithType:NewsTypeHeadline pageNumber:0] completionHandle:^(NSArray *array) {
+    [XTModelHandle shareNewsWithURL:[XTNewsURL shareNewsURLWithType:NewsTypeHeadline pageNumber:_currentPageNumber] completionHandle:^(NSArray *array) {
         
         [weakSelf reloadListViewDataSource:array];
         
@@ -195,6 +202,8 @@ UIScrollViewDelegate
 
 - (void)downloadBDPicWithPageNumber:(int)pageNum keyWord:(NSString *)key
 {
+    //接口不稳定需要多请求2次
+    
     static int tryCount = 1;
     
     _key = key;
@@ -253,6 +262,7 @@ UIScrollViewDelegate
         
         [self.contentCollectionView reloadData];
     }
+    [self addFooterView];
 }
 
 #pragma mark - UITableViewDataSource
@@ -361,6 +371,8 @@ UIScrollViewDelegate
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
+    if (_type == XTListViewTypeTableViewCell) return;//暂不为tableView添加刷新
+
     if (decelerate && scrollView.contentOffset.y < -40) {
         
         _refreshState = RefreshStateLoading;
@@ -400,10 +412,10 @@ UIScrollViewDelegate
     }
 }
 
-
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    if (_type == XTListViewTypeTableViewCell) return;//暂不为tableView添加刷新
+    
     if (scrollView.contentOffset.y <= 0 && _refreshState != RefreshStateLoading) {
         _refreshState = RefreshStatePulling;
         if (!_refreshView) {
