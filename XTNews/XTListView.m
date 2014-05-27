@@ -429,4 +429,11 @@ UIScrollViewDelegate
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(listView:didSelected:)]) {
+        [_delegate listView:self didSelected:indexPath.row];
+    }
+}
+
 @end

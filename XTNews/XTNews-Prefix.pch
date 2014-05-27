@@ -17,5 +17,6 @@
     #import "XTMacroHeader.h"
     #import "NSString+Extension.h"
     #import "XTNewsConfig.h"
+    #import "XTSideMenuManager.h"
 #endif
 

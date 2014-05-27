@@ -71,6 +71,7 @@
 		09412FF019129F0B00440A6B /* MCTopAligningLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09412FEF19129F0B00440A6B /* MCTopAligningLabel.m */; };
 		09412FF61913646000440A6B /* CRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 09412FF31913646000440A6B /* CRNavigationBar.m */; };
 		09412FF71913646000440A6B /* CRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09412FF51913646000440A6B /* CRNavigationController.m */; };
+		099D6F281934301300DE3998 /* XTSideMenuManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 099D6F271934301300DE3998 /* XTSideMenuManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +212,8 @@
 		09412FF31913646000440A6B /* CRNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRNavigationBar.m; sourceTree = "<group>"; };
 		09412FF41913646000440A6B /* CRNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRNavigationController.h; sourceTree = "<group>"; };
 		09412FF51913646000440A6B /* CRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRNavigationController.m; sourceTree = "<group>"; };
+		099D6F261934301300DE3998 /* XTSideMenuManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTSideMenuManager.h; sourceTree = "<group>"; };
+		099D6F271934301300DE3998 /* XTSideMenuManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTSideMenuManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,6 +355,8 @@
 				09412F2D1910BD7000440A6B /* XTAppDelegate.h */,
 				09412F2E1910BD7000440A6B /* XTAppDelegate.m */,
 				090A3ED51916788E00A5060E /* XTNewsConfig.h */,
+				099D6F261934301300DE3998 /* XTSideMenuManager.h */,
+				099D6F271934301300DE3998 /* XTSideMenuManager.m */,
 				090A3EAF1916764100A5060E /* CacheFile */,
 				09412FBA1912255400440A6B /* URLLayer */,
 				09412FAD1910ED5700440A6B /* Model */,
@@ -746,6 +751,7 @@
 				09412F2B1910BD7000440A6B /* main.m in Sources */,
 				090A3F2819168A9D00A5060E /* SDImageCache.m in Sources */,
 				090A3F2719168A9D00A5060E /* NSData+ImageContentType.m in Sources */,
+				099D6F281934301300DE3998 /* XTSideMenuManager.m in Sources */,
 				090A3ECC1916778600A5060E /* NSString+Extension.m in Sources */,
 				090A3F2E19168A9D00A5060E /* SDWebImagePrefetcher.m in Sources */,
 				090A3F3119168A9D00A5060E /* UIImage+MultiFormat.m in Sources */,

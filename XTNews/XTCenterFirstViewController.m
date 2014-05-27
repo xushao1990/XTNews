@@ -11,7 +11,7 @@
 #import "iCarousel.h"
 #import "XTSegmentControl.h"
 
-@interface XTCenterFirstViewController ()<iCarouselDataSource,iCarouselDelegate>
+@interface XTCenterFirstViewController ()<iCarouselDataSource,iCarouselDelegate,XTListViewDelegate>
 
 @property (nonatomic , strong) XTSegmentControl *segmentControl;
 
@@ -109,6 +109,7 @@
         view = [[UIView alloc] initWithFrame:carousel.bounds];
         listView = [[XTListView alloc] initWithFrame:view.bounds type:XTListViewTypeTableViewCell];//修改此处的类型
         listView.tag = 1;
+        listView.delegate = self;
         [view addSubview:listView];
         
     }else{
@@ -149,6 +150,22 @@
         
         [_segmentControl endMoveIndex:carousel.currentItemIndex];
     }
+}
+
+#pragma mark - ListViewDelegate
+
+- (void)listView:(XTListView *)listView didSelected:(NSInteger)index
+{
+    UIViewController *vc = [[UIViewController alloc] init];
+    vc.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController pushViewController:vc animated:YES];
+    [XTSideMenuManager resetSideMenuRecognizerEnable:NO];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [XTSideMenuManager resetSideMenuRecognizerEnable:YES];
 }
 
 - (void)didReceiveMemoryWarning

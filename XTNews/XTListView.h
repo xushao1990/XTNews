@@ -23,11 +23,22 @@ typedef enum {
     
 }XTListViewType;
 
+@class XTListView;
+
+@protocol XTListViewDelegate <NSObject>
+
+- (void)listView:(XTListView *)listView didSelected:(NSInteger)index;
+
+@end
+
+
 @interface XTListView : UIView
 
 @property (nonatomic) XTListViewType type;
 
 @property (nonatomic) int currentPageNumber;
+
+@property (nonatomic , weak) id <XTListViewDelegate> delegate;
 
 - (id)initWithFrame:(CGRect)frame type:(XTListViewType)type;
 
