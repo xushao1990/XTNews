@@ -72,6 +72,10 @@
 		09412FF61913646000440A6B /* CRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 09412FF31913646000440A6B /* CRNavigationBar.m */; };
 		09412FF71913646000440A6B /* CRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09412FF51913646000440A6B /* CRNavigationController.m */; };
 		099D6F281934301300DE3998 /* XTSideMenuManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 099D6F271934301300DE3998 /* XTSideMenuManager.m */; };
+		75855E50194E86D1009696FE /* XTCornerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 75855E4F194E86D1009696FE /* XTCornerButton.m */; };
+		75855E54194E8D8D009696FE /* XTAddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 75855E53194E8D8D009696FE /* XTAddButton.m */; };
+		75855E57194E97C5009696FE /* XTCategoryEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75855E56194E97C5009696FE /* XTCategoryEditView.m */; };
+		75855E5A194E9F62009696FE /* UIAlertView+RWBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 75855E59194E9F62009696FE /* UIAlertView+RWBlock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +218,15 @@
 		09412FF51913646000440A6B /* CRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRNavigationController.m; sourceTree = "<group>"; };
 		099D6F261934301300DE3998 /* XTSideMenuManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTSideMenuManager.h; sourceTree = "<group>"; };
 		099D6F271934301300DE3998 /* XTSideMenuManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTSideMenuManager.m; sourceTree = "<group>"; };
+		75855E4E194E86D1009696FE /* XTCornerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTCornerButton.h; sourceTree = "<group>"; };
+		75855E4F194E86D1009696FE /* XTCornerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTCornerButton.m; sourceTree = "<group>"; };
+		75855E51194E8A4B009696FE /* XTCategoryHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTCategoryHeader.h; sourceTree = "<group>"; };
+		75855E52194E8D8D009696FE /* XTAddButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTAddButton.h; sourceTree = "<group>"; };
+		75855E53194E8D8D009696FE /* XTAddButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTAddButton.m; sourceTree = "<group>"; };
+		75855E55194E97C5009696FE /* XTCategoryEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTCategoryEditView.h; sourceTree = "<group>"; };
+		75855E56194E97C5009696FE /* XTCategoryEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTCategoryEditView.m; sourceTree = "<group>"; };
+		75855E58194E9F62009696FE /* UIAlertView+RWBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+RWBlock.h"; sourceTree = "<group>"; };
+		75855E59194E9F62009696FE /* UIAlertView+RWBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+RWBlock.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,6 +370,15 @@
 				090A3ED51916788E00A5060E /* XTNewsConfig.h */,
 				099D6F261934301300DE3998 /* XTSideMenuManager.h */,
 				099D6F271934301300DE3998 /* XTSideMenuManager.m */,
+				75855E51194E8A4B009696FE /* XTCategoryHeader.h */,
+				75855E4E194E86D1009696FE /* XTCornerButton.h */,
+				75855E4F194E86D1009696FE /* XTCornerButton.m */,
+				75855E52194E8D8D009696FE /* XTAddButton.h */,
+				75855E53194E8D8D009696FE /* XTAddButton.m */,
+				75855E55194E97C5009696FE /* XTCategoryEditView.h */,
+				75855E56194E97C5009696FE /* XTCategoryEditView.m */,
+				75855E58194E9F62009696FE /* UIAlertView+RWBlock.h */,
+				75855E59194E9F62009696FE /* UIAlertView+RWBlock.m */,
 				090A3EAF1916764100A5060E /* CacheFile */,
 				09412FBA1912255400440A6B /* URLLayer */,
 				09412FAD1910ED5700440A6B /* Model */,
@@ -713,6 +735,7 @@
 				09412FB9191220DD00440A6B /* XTModelHandle.m in Sources */,
 				09412FA51910D1AC00440A6B /* XTTableViewCell.m in Sources */,
 				090A3F3619168AAC00A5060E /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */,
+				75855E54194E8D8D009696FE /* XTAddButton.m in Sources */,
 				090A3F4B1916993400A5060E /* XTRefreshView.m in Sources */,
 				090A3F2F19168A9D00A5060E /* UIButton+WebCache.m in Sources */,
 				09412F7C1910CAFE00440A6B /* XTSegmentControl.m in Sources */,
@@ -750,11 +773,14 @@
 				090A3F3019168A9D00A5060E /* UIImage+GIF.m in Sources */,
 				09412F2B1910BD7000440A6B /* main.m in Sources */,
 				090A3F2819168A9D00A5060E /* SDImageCache.m in Sources */,
+				75855E5A194E9F62009696FE /* UIAlertView+RWBlock.m in Sources */,
 				090A3F2719168A9D00A5060E /* NSData+ImageContentType.m in Sources */,
 				099D6F281934301300DE3998 /* XTSideMenuManager.m in Sources */,
 				090A3ECC1916778600A5060E /* NSString+Extension.m in Sources */,
 				090A3F2E19168A9D00A5060E /* SDWebImagePrefetcher.m in Sources */,
+				75855E57194E97C5009696FE /* XTCategoryEditView.m in Sources */,
 				090A3F3119168A9D00A5060E /* UIImage+MultiFormat.m in Sources */,
+				75855E50194E86D1009696FE /* XTCornerButton.m in Sources */,
 				090A3F3319168A9D00A5060E /* UIImageView+WebCache.m in Sources */,
 				09412F691910C02300440A6B /* XTLeftMenuViewController.m in Sources */,
 				09412F811910CB8D00440A6B /* XTTabBarViewController.m in Sources */,

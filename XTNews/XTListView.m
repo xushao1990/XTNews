@@ -371,6 +371,7 @@ UIScrollViewDelegate
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
+    return;
     if (_type == XTListViewTypeTableViewCell) return;//暂不为tableView添加刷新
 
     if (decelerate && scrollView.contentOffset.y < -40) {
@@ -414,6 +415,7 @@ UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    return;
     if (_type == XTListViewTypeTableViewCell) return;//暂不为tableView添加刷新
     
     if (scrollView.contentOffset.y <= 0 && _refreshState != RefreshStateLoading) {

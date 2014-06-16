@@ -30,6 +30,8 @@ typedef void(^XTSegmentControlBlock)(NSInteger index);
 
 - (instancetype)initWithFrame:(CGRect)frame Items:(NSArray *)titleItem selectedBlock:(XTSegmentControlBlock)selectedHandle;
 
+- (void)reloadSegsWithItems:(NSArray *)segs;
+
 - (void)selectIndex:(NSInteger)index;
 
 - (void)moveIndexWithProgress:(float)progress;

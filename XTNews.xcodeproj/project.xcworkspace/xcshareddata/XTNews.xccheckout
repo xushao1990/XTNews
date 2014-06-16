@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>4462463A-2431-4244-8439-2D72D3BDB306</string>
+	<string>E76F4CCB-149A-4B5C-9562-83AF2AC5D9CF</string>
 	<key>IDESourceControlProjectName</key>
 	<string>XTNews</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>67552685-FE4C-4F86-8620-EA1E3891AFF1</key>
-		<string>https://github.com/xushao1990/XTNews.git</string>
+		<key>ADB35AE1-F4E7-46EA-80A4-CAE881184F50</key>
+		<string>https://www.github.com/xushao1990/XTNews</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>XTNews.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>67552685-FE4C-4F86-8620-EA1E3891AFF1</key>
+		<key>ADB35AE1-F4E7-46EA-80A4-CAE881184F50</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/xushao1990/XTNews.git</string>
+	<string>https://www.github.com/xushao1990/XTNews</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>67552685-FE4C-4F86-8620-EA1E3891AFF1</string>
+	<string>ADB35AE1-F4E7-46EA-80A4-CAE881184F50</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>67552685-FE4C-4F86-8620-EA1E3891AFF1</string>
+			<string>ADB35AE1-F4E7-46EA-80A4-CAE881184F50</string>
 			<key>IDESourceControlWCCName</key>
 			<string>XTNews</string>
 		</dict>

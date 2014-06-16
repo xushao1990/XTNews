@@ -493,6 +493,10 @@
            }
        }
     );
+    
+    if (!self.panGestureEnabled) {
+        return NO;
+    }
   
     if (self.panFromEdge && [gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] && !self.visible) {
         CGPoint point = [touch locationInView:gestureRecognizer.view];

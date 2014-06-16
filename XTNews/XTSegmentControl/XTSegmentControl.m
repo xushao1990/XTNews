@@ -146,6 +146,13 @@
     }
 }
 
+- (void)reloadSegsWithItems:(NSArray *)segs
+{
+    [self.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    _lineView = nil;
+    [self initItemsWithTitleArray:segs];
+}
+
 - (void)initItemsWithTitleArray:(NSArray *)titleArray
 {
     _itemFrames = @[].mutableCopy;
