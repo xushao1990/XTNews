@@ -84,7 +84,6 @@
     [self.view addSubview:cornerButton];
 }
 
-
 - (void)showCategories:(XTCornerButton *)sender
 {
     BOOL show = [sender cornerButtonSelected];
@@ -154,6 +153,9 @@
     }
 }
 
+/**
+ * 隐藏添加分类按钮
+ **/
 - (void)hideAddCategoryButton
 {
     UIView *addCategoryButton = [self.view viewWithTag:kTagAddCategoryButton];
@@ -166,34 +168,48 @@
     }];
 }
 
+/**
+ * 显示添加分类按钮
+ **/
+
 - (void)showCategoryView
 {
-    UIView *categortBackView = [[UIView alloc] initWithFrame:_carousel.frame];
-    categortBackView.clipsToBounds = YES;
-    categortBackView.backgroundColor = [UIColor clearColor];
-    categortBackView.tag = kTagCategoryBackView;
-    [self.view addSubview:categortBackView];
-    
-    XTCategoryEditView *editView = [[XTCategoryEditView alloc] initWithFrame:categortBackView.bounds catrgories:_titleArray];
-    editView.center = CGPointMake(editView.center.x, -editView.center.y);
-    [categortBackView addSubview:editView];
-    
-    [UIView animateWithDuration:kCategoryShowAnimationTime animations:^{
+    XTListView *listView = (XTListView *)[self.carousel.currentItemView viewWithTag:1];
+    if (listView.type == XTListViewTypeTableViewCell) {
+#warning 新闻展示时不显示categoryView
+    }else{
+        UIView *categortBackView = [[UIView alloc] initWithFrame:_carousel.frame];
+        categortBackView.clipsToBounds = YES;
+        categortBackView.backgroundColor = [UIColor clearColor];
+        categortBackView.tag = kTagCategoryBackView;
+        [self.view addSubview:categortBackView];
+        
+        XTCategoryEditView *editView = [[XTCategoryEditView alloc] initWithFrame:categortBackView.bounds catrgories:_titleArray];
         editView.center = CGPointMake(editView.center.x, -editView.center.y);
-    }];
+        [categortBackView addSubview:editView];
+        
+        [UIView animateWithDuration:kCategoryShowAnimationTime animations:^{
+            editView.center = CGPointMake(editView.center.x, -editView.center.y);
+        }];
+    }
 }
 
 - (void)hideCategoryView
 {
-    UIView *view = [self.view viewWithTag:kTagCategoryBackView];
-    XTCategoryEditView *editView = view.subviews[0];
-    [self reloadCarousel:editView.tags];
-    [UIView animateWithDuration:kCategoryShowAnimationTime animations:^{
-        editView.center = CGPointMake(editView.center.x, -editView.center.y);
-    }completion:^(BOOL finished) {
-        view.tag = 0;
-        [view removeFromSuperview];
-    }];
+    XTListView *listView = (XTListView *)[self.carousel.currentItemView viewWithTag:1];
+    if (listView.type == XTListViewTypeTableViewCell) {
+#warning 新闻展示时不显示categoryView
+    }else{
+        UIView *view = [self.view viewWithTag:kTagCategoryBackView];
+        XTCategoryEditView *editView = view.subviews[0];
+        [self reloadCarousel:editView.tags];
+        [UIView animateWithDuration:kCategoryShowAnimationTime animations:^{
+            editView.center = CGPointMake(editView.center.x, -editView.center.y);
+        }completion:^(BOOL finished) {
+            view.tag = 0;
+            [view removeFromSuperview];
+        }];
+    }
 }
 
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
@@ -214,7 +230,7 @@
     if (view == nil)
     {
         view = [[UIView alloc] initWithFrame:carousel.bounds];
-        listView = [[XTListView alloc] initWithFrame:view.bounds type:XTListViewTypeCollectionCell];//修改此处的类型
+        listView = [[XTListView alloc] initWithFrame:view.bounds type:XTListViewTypeTableViewCell];//修改此处的类型
         listView.tag = 1;
         listView.delegate = self;
         [view addSubview:listView];

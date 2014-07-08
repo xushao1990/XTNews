@@ -34,7 +34,7 @@ typedef enum {
 
 @interface XTListView : UIView
 
-@property (nonatomic) XTListViewType type;
+@property (nonatomic, readonly) XTListViewType type;
 
 @property (nonatomic) int currentPageNumber;
 

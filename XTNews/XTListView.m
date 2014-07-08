@@ -8,6 +8,8 @@
 
 #import "XTListView.h"
 
+#import "XTAdModel+Default.h"
+
 //新闻
 #import "XTTableViewCell.h"
 #import "XTModelHandle.h"
@@ -20,6 +22,9 @@
 #import "BDPictureURL.h"
 #import "BDPicModelHandle.h"
 
+//广告
+
+#import "XTAdview.h"
 
 #import "XTRefreshView.h"
 
@@ -49,6 +54,8 @@ UIScrollViewDelegate
 @property (nonatomic , strong) PSCollectionView *contentCollectionView;
 
 @property (nonatomic , strong) NSMutableArray *dataSource;
+
+@property (nonatomic, readwrite) XTListViewType type;
 
 //----------------------------------------Sep
 
@@ -294,7 +301,10 @@ UIScrollViewDelegate
             
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentify];
             
-            cell.backgroundColor = [UIColor lightGrayColor];
+            XTAdview *adview = [[XTAdview alloc] initWithFrame:CGRectMake(0, 0, 320, 185) ads:[XTAdModel defaultAdModels]];
+            [cell addSubview:adview];
+            
+//            cell.backgroundColor = [UIColor lightGrayColor];
             
         }
                 

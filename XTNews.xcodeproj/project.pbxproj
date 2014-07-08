@@ -72,6 +72,10 @@
 		09412FF61913646000440A6B /* CRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 09412FF31913646000440A6B /* CRNavigationBar.m */; };
 		09412FF71913646000440A6B /* CRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09412FF51913646000440A6B /* CRNavigationController.m */; };
 		099D6F281934301300DE3998 /* XTSideMenuManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 099D6F271934301300DE3998 /* XTSideMenuManager.m */; };
+		644A68FA196A459700F3CA94 /* XTAdview.m in Sources */ = {isa = PBXBuildFile; fileRef = 644A68F9196A459700F3CA94 /* XTAdview.m */; };
+		644A68FD196A4D5100F3CA94 /* XTAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 644A68FC196A4D5100F3CA94 /* XTAdModel.m */; };
+		644A6903196A4DB900F3CA94 /* XTAdModel+Default.m in Sources */ = {isa = PBXBuildFile; fileRef = 644A6902196A4DB900F3CA94 /* XTAdModel+Default.m */; };
+		644A6906196A50BA00F3CA94 /* XTAdViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 644A6905196A50BA00F3CA94 /* XTAdViewItem.m */; };
 		75855E50194E86D1009696FE /* XTCornerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 75855E4F194E86D1009696FE /* XTCornerButton.m */; };
 		75855E54194E8D8D009696FE /* XTAddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 75855E53194E8D8D009696FE /* XTAddButton.m */; };
 		75855E57194E97C5009696FE /* XTCategoryEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75855E56194E97C5009696FE /* XTCategoryEditView.m */; };
@@ -218,6 +222,14 @@
 		09412FF51913646000440A6B /* CRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRNavigationController.m; sourceTree = "<group>"; };
 		099D6F261934301300DE3998 /* XTSideMenuManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTSideMenuManager.h; sourceTree = "<group>"; };
 		099D6F271934301300DE3998 /* XTSideMenuManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTSideMenuManager.m; sourceTree = "<group>"; };
+		644A68F8196A459700F3CA94 /* XTAdview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTAdview.h; sourceTree = "<group>"; };
+		644A68F9196A459700F3CA94 /* XTAdview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTAdview.m; sourceTree = "<group>"; };
+		644A68FB196A4D5100F3CA94 /* XTAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTAdModel.h; sourceTree = "<group>"; };
+		644A68FC196A4D5100F3CA94 /* XTAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTAdModel.m; sourceTree = "<group>"; };
+		644A6901196A4DB900F3CA94 /* XTAdModel+Default.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XTAdModel+Default.h"; sourceTree = "<group>"; };
+		644A6902196A4DB900F3CA94 /* XTAdModel+Default.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XTAdModel+Default.m"; sourceTree = "<group>"; };
+		644A6904196A50BA00F3CA94 /* XTAdViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTAdViewItem.h; sourceTree = "<group>"; };
+		644A6905196A50BA00F3CA94 /* XTAdViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTAdViewItem.m; sourceTree = "<group>"; };
 		75855E4E194E86D1009696FE /* XTCornerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTCornerButton.h; sourceTree = "<group>"; };
 		75855E4F194E86D1009696FE /* XTCornerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTCornerButton.m; sourceTree = "<group>"; };
 		75855E51194E8A4B009696FE /* XTCategoryHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTCategoryHeader.h; sourceTree = "<group>"; };
@@ -367,18 +379,11 @@
 			children = (
 				09412F2D1910BD7000440A6B /* XTAppDelegate.h */,
 				09412F2E1910BD7000440A6B /* XTAppDelegate.m */,
-				090A3ED51916788E00A5060E /* XTNewsConfig.h */,
 				099D6F261934301300DE3998 /* XTSideMenuManager.h */,
 				099D6F271934301300DE3998 /* XTSideMenuManager.m */,
-				75855E51194E8A4B009696FE /* XTCategoryHeader.h */,
-				75855E4E194E86D1009696FE /* XTCornerButton.h */,
-				75855E4F194E86D1009696FE /* XTCornerButton.m */,
-				75855E52194E8D8D009696FE /* XTAddButton.h */,
-				75855E53194E8D8D009696FE /* XTAddButton.m */,
-				75855E55194E97C5009696FE /* XTCategoryEditView.h */,
-				75855E56194E97C5009696FE /* XTCategoryEditView.m */,
-				75855E58194E9F62009696FE /* UIAlertView+RWBlock.h */,
-				75855E59194E9F62009696FE /* UIAlertView+RWBlock.m */,
+				090A3ED51916788E00A5060E /* XTNewsConfig.h */,
+				644A695D196AA20900F3CA94 /* XTAdView */,
+				644A68F1196A447F00F3CA94 /* CategoryEditor(iOS7) */,
 				090A3EAF1916764100A5060E /* CacheFile */,
 				09412FBA1912255400440A6B /* URLLayer */,
 				09412FAD1910ED5700440A6B /* Model */,
@@ -630,6 +635,37 @@
 			path = CRNavigationController;
 			sourceTree = "<group>";
 		};
+		644A68F1196A447F00F3CA94 /* CategoryEditor(iOS7) */ = {
+			isa = PBXGroup;
+			children = (
+				75855E51194E8A4B009696FE /* XTCategoryHeader.h */,
+				75855E4E194E86D1009696FE /* XTCornerButton.h */,
+				75855E4F194E86D1009696FE /* XTCornerButton.m */,
+				75855E52194E8D8D009696FE /* XTAddButton.h */,
+				75855E53194E8D8D009696FE /* XTAddButton.m */,
+				75855E55194E97C5009696FE /* XTCategoryEditView.h */,
+				75855E56194E97C5009696FE /* XTCategoryEditView.m */,
+				75855E58194E9F62009696FE /* UIAlertView+RWBlock.h */,
+				75855E59194E9F62009696FE /* UIAlertView+RWBlock.m */,
+			);
+			name = "CategoryEditor(iOS7)";
+			sourceTree = "<group>";
+		};
+		644A695D196AA20900F3CA94 /* XTAdView */ = {
+			isa = PBXGroup;
+			children = (
+				644A68F8196A459700F3CA94 /* XTAdview.h */,
+				644A68F9196A459700F3CA94 /* XTAdview.m */,
+				644A6904196A50BA00F3CA94 /* XTAdViewItem.h */,
+				644A6905196A50BA00F3CA94 /* XTAdViewItem.m */,
+				644A68FB196A4D5100F3CA94 /* XTAdModel.h */,
+				644A68FC196A4D5100F3CA94 /* XTAdModel.m */,
+				644A6901196A4DB900F3CA94 /* XTAdModel+Default.h */,
+				644A6902196A4DB900F3CA94 /* XTAdModel+Default.m */,
+			);
+			name = XTAdView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -730,6 +766,7 @@
 				09412FA11910CF6D00440A6B /* ListViewDateSource.m in Sources */,
 				09412F551910BF6B00440A6B /* RESideMenu.m in Sources */,
 				09412F8E1910CC6D00440A6B /* XTCenterSecondViewController.m in Sources */,
+				644A68FD196A4D5100F3CA94 /* XTAdModel.m in Sources */,
 				090A3EB51916769300A5060E /* FileUtil.m in Sources */,
 				090A3F2919168A9D00A5060E /* SDWebImageCompat.m in Sources */,
 				09412FB9191220DD00440A6B /* XTModelHandle.m in Sources */,
@@ -744,7 +781,9 @@
 				09412FB01910ED6600440A6B /* XTNewsObject.m in Sources */,
 				09412F6C1910C02D00440A6B /* XTRightMenuViewController.m in Sources */,
 				090A3EB21916765300A5060E /* XTCacheFile.m in Sources */,
+				644A68FA196A459700F3CA94 /* XTAdview.m in Sources */,
 				090A3F2A19168A9D00A5060E /* SDWebImageDecoder.m in Sources */,
+				644A6903196A4DB900F3CA94 /* XTAdModel+Default.m in Sources */,
 				09412F2F1910BD7000440A6B /* XTAppDelegate.m in Sources */,
 				090A3F451916967A00A5060E /* NSDate+TimeAgo.m in Sources */,
 				09412F561910BF6B00440A6B /* UIViewController+RESideMenu.m in Sources */,
@@ -761,6 +800,7 @@
 				09412F851910CBEC00440A6B /* XTCenterViewController.m in Sources */,
 				09412F9D1910CF0700440A6B /* XTListView.m in Sources */,
 				09412F781910C41E00440A6B /* XTRootViewController.m in Sources */,
+				644A6906196A50BA00F3CA94 /* XTAdViewItem.m in Sources */,
 				09412F881910CC4500440A6B /* XTCenterFirstViewController.m in Sources */,
 				090A3EAA19161FEC00A5060E /* BDPicModelHandle.m in Sources */,
 				09412F5A1910BFB700440A6B /* iCarousel.m in Sources */,
